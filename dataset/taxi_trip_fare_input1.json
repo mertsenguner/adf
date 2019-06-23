@@ -10,7 +10,8 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "trip_fare_1.csv",
-				"container": "demo"
+				"folderPath": "sampledata",
+				"container": "adf-sample-files"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
