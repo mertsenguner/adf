@@ -10,7 +10,7 @@
 						"type": "DatasetReference"
 					},
 					"name": "source1",
-					"script": "source(output(\n\t\tmovieId as integer,\n\t\ttitle as string,\n\t\tgenres as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false) ~> source1"
+					"script": "source(output(\n\t\tmovieId as integer,\n\t\ttitle as string,\n\t\tgenres as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionBy('hash', 2,\n\t\tmovieId\n\t)) ~> source1"
 				}
 			],
 			"sinks": [
@@ -20,13 +20,17 @@
 						"type": "DatasetReference"
 					},
 					"name": "sink1",
-					"script": "Filter1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> sink1"
+					"script": "DerivedColumn1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false) ~> sink1"
 				}
 			],
 			"transformations": [
 				{
 					"name": "Filter1",
 					"script": "source1 filter(movieId > 13) ~> Filter1"
+				},
+				{
+					"name": "DerivedColumn1",
+					"script": "Filter1 derive(length2Col = length(genres) + length(title)\r\n) ~> DerivedColumn1"
 				}
 			]
 		}
