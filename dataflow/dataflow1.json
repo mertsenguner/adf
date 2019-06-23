@@ -26,7 +26,7 @@
 			"transformations": [
 				{
 					"name": "Filter1",
-					"script": "source1 filter(greater((toInteger('movieId')),14)) ~> Filter1"
+					"script": "source1 filter(movieId > 13) ~> Filter1"
 				}
 			]
 		}
