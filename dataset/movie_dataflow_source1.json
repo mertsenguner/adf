@@ -10,7 +10,8 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "movies.csv",
-				"container": "demo"
+				"folderPath": "sampledata",
+				"container": "adf-sample-files"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

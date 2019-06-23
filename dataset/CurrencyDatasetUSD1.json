@@ -10,7 +10,8 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "Currency_USD.txt",
-				"container": "demo"
+				"folderPath": "sampledata",
+				"container": "adf-sample-files"
 			},
 			"columnDelimiter": "\t",
 			"escapeChar": "\\",
