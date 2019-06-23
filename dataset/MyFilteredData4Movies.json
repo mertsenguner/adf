@@ -1,5 +1,5 @@
 {
-	"name": "DelimitedText1",
+	"name": "MyFilteredData4Movies",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage1",
